@@ -1,14 +1,19 @@
+var y = 10
+var x = 3
 
-var name = "Gabriel Fernandes"
-var age = 35
-var pernon = ['alan', 'gabriel', 'kaio']
+var resultado = y / x // valores binários
+resultado++ // valores unários
 
-var person = {
-    name: "Gabriel Fernandes",
-    idade: age,
-    statusBancario: false,
-    rico: true
-}
+console.log(resultado)
 
+// ordem
+// multiplicação
+// divisão
+// soma
+// subtração
+// () prioriza
 
-console.log(person)
+// exemplo
+// var resultado = (20 + 5) * 2
+// acima ele vai fazer primeiro a conta 
+// dentro de parentese
