@@ -1,25 +1,7 @@
-var produtos = 'camisa'
-var Text = 'temos em estoque: '
-
-Text += produtos
-
-console.log(Text)
-
-var produtos = ['sapato']
-var Text = 'temos em estoque: '
-
-Text += produtos[0]
-
-console.log(Text)
-
-
-
-var produtos = {
-    name: 'relogio',
-    tipo: 'smart'
+function sum(a, b) { // aqui dentro se chama parâmetros
+    return a + b
 }
-var Text = 'temos em estoque: '
+console.log(sum(10, 5)) // aqui se chama argumentos
+// a função tem dois parâmetros e espera dois argumentos
 
-Text += produtos.name
-
-console.log(Text)
+console.log(sum(10, 10))
