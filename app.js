@@ -1,19 +1,25 @@
-var y = 10
-var x = 3
+var produtos = 'camisa'
+var Text = 'temos em estoque: '
 
-var resultado = y / x // valores binários
-resultado++ // valores unários
+Text += produtos
 
-console.log(resultado)
+console.log(Text)
 
-// ordem
-// multiplicação
-// divisão
-// soma
-// subtração
-// () prioriza
+var produtos = ['sapato']
+var Text = 'temos em estoque: '
 
-// exemplo
-// var resultado = (20 + 5) * 2
-// acima ele vai fazer primeiro a conta 
-// dentro de parentese
+Text += produtos[0]
+
+console.log(Text)
+
+
+
+var produtos = {
+    name: 'relogio',
+    tipo: 'smart'
+}
+var Text = 'temos em estoque: '
+
+Text += produtos.name
+
+console.log(Text)
