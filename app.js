@@ -1,51 +1,22 @@
+// AND, OR, NOT
+
+// AND = &&, OR = ||, NOT = !
+
+var sexo = 'f'
+
+if (!sexo === 'M') {
+    console.log('sexo Masculino')
+
+} else if (sexo === 'F' || 'f'){
+    console.log('sexo feminino')
+
+} else {
+    console.log('valor inválido')
+}
+
+// a sinal ! exclamação inverte o valor false vira true e vice versa
+
 var isActive = true
-var msg = ''
+isActive = !isActive
 
-if (isActive) {
-    msg = 'está ativo'
-} else {
-   msg = 'não está ativo'
-}
-
-console.log(msg)
-
-var dispositivo = 'mobile'
-var logado = true
-var names = 'Gabriel'
-var userMail = 'Gabriel@gmail.com'
-
-var desk = {
-    dispositivo: dispositivo,
-    logado: logado,
-    name: names,
-    userMail: userMail
-
-}
-
-if (desk.logado) { 
-    console.log('acesso permitido')
-} else {
-    console.log('acesso negado')
-}
-
-
-console.log(desk)
-
-var sinal = 'verde'
-
-var statusSin = ''
-
-switch (sinal) {
-
-    case 'verde':
-        statusSin = 'pode passar, sinal verde'
-        break;
-
-    case 'vermelho':
-        statusSin = 'pare, sinal vermelho'
-        break;
-        
-    default:
-        statusSin = 'valor inválido'
-}
-console.log(statusSin)
+console.log(isActive)
