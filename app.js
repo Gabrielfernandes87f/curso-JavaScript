@@ -8,3 +8,4 @@ for (var count = 1; count <= 10; count++) {
 for (i = 1; i <= 10; i++) {
     console.log(i)
 }
+// up
