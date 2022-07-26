@@ -1,4 +1,10 @@
-var age = 18
-var result = age >= 18 ? 'maior de idade' : 'menor de idade'
+// for (contagem; condição; incremento)
 
-console.log(result)
+for (var count = 1; count <= 10; count++) {
+    console.log(count)
+}
+// i = interação
+
+for (i = 1; i <= 10; i++) {
+    console.log(i)
+}
