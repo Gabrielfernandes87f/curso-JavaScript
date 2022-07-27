@@ -6,7 +6,5 @@ button.addEventListener('click', function (event) {
     event.preventDefault();
     card.innerHTML = `Sua idade é: ` + input.value;
     console.log(input.value);
-    
+
 });
-// 
-//////////////////////////////////////////////////////////////////////////////////////////////
