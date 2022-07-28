@@ -1,12 +1,21 @@
-var button = document.querySelector("#body button");
+var button = document.querySelector("#app button");
+var cep = document.querySelector("#cep ");
+var logradouro = document.querySelector("#logradouro");
+var bairro = document.querySelector("#bairro");
+var localidade = document.querySelector("#localidade");
+var uf = document.querySelector("#uf");
 
-button.addEventListener("click", function () {
+button.addEventListener("click", function (event) {
+    event.preventDefault();
     
-    axios.get("https://api.github.com/users")
+
+    axios.get("https://viacep.com.br/ws/58428850/json/")
         .then(function (response) {
-            console.log(response);
-            console.log(response.data[0].login);
-            console.log('deu certo');
+            cep.innerText = response.data.cep;
+            logradouro.innerText = response.data.logradouro;
+            bairro.innerText = response.data.bairro;
+            localidade.innerText = response.data.localidade;
+            uf.innerText = response.data.uf;
         })
 
         .catch(function (error) {
@@ -21,5 +30,6 @@ button.addEventListener("click", function () {
 
 
 
-
+// https://viacep.com.br/ws/58428850/json/
 // https://api.github.com/users
+// https://viacep.com.br/
