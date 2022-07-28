@@ -27,9 +27,6 @@ button.addEventListener("click", function (event) {
             console.log('finally')
         })
 })
-
-
-
 // https://viacep.com.br/ws/58428850/json/
 // https://api.github.com/users
 // https://viacep.com.br/
