@@ -1,32 +1,46 @@
-var button = document.querySelector("#app button");
-var cep = document.querySelector("#cep ");
-var logradouro = document.querySelector("#logradouro");
-var bairro = document.querySelector("#bairro");
-var localidade = document.querySelector("#localidade");
-var uf = document.querySelector("#uf");
+var button = document.querySelector("#app form button");
 
-button.addEventListener("click", function (event) {
+var zipCode = document.querySelector("#app form input");
+var content = document.querySelector("#app main");
+
+button.addEventListener("click", run);
+
+function run(event) {
     event.preventDefault();
-    
+    var zip = zipCode.value;
 
-    axios.get("https://viacep.com.br/ws/58428850/json/")
+    var zip = zip.replace(' ', '');
+    var zip = zip.replace('.', '');
+    var zip = zip.trim();
+
+    axios.get("https://viacep.com.br/ws/" + zip + "/json/")
         .then(function (response) {
-            cep.innerText = response.data.cep;
-            logradouro.innerText = response.data.logradouro;
-            bairro.innerText = response.data.bairro;
-            localidade.innerText = response.data.localidade;
-            uf.innerText = response.data.uf;
-        })
+            content.innerHTML = ''
+            console.log(response.data);
+            var data = response.data;
+            var html = `
+            <p>${data.logradouro}</p>
+            <p>${data.bairro}</p>
+            <p>${data.localidade}</p>
+            <p>${data.uf}</p>
+            `;
+            content.innerHTML = html;
 
-        .catch(function (error) {
-            console.warn(error);
-            console.warn(error.response);
-        })
-            
-        .finally(function () {
-            console.log('finally')
-        })
-})
+            if (response.data.erro) {
+                new Error("Cep não encontrado");
+                console.log("Cep não encontrado");
+                content.innerHTML = "<p>Cep não encontrado<p>";    
+            }
+        }
+        
+    ).catch(function (error) { 
+        content.innerHTML = '<p>CEP não encontrado</p>';
+    })
+}
+
+
+
+
 // https://viacep.com.br/ws/58428850/json/
 // https://api.github.com/users
 // https://viacep.com.br/
