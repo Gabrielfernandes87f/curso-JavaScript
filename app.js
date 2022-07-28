@@ -1,15 +1,22 @@
 var button = document.querySelector("#body button");
 
 button.addEventListener("click", function () {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api.github.com/users")
-    xhr.send()
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            var data = JSON.parse(xhr.responseText);
-            console.log(data[0].login);
-        }
-    }
+    
+    axios.get("https://api.github.com/users")
+        .then(function (response) {
+            console.log(response);
+            console.log(response.data[0].login);
+            console.log('deu certo');
+        })
+
+        .catch(function (error) {
+            console.warn(error);
+            console.warn(error.response);
+        })
+            
+        .finally(function () {
+            console.log('finally')
+        })
 })
 
 
