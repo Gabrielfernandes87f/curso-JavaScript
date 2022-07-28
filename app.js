@@ -1,19 +1,18 @@
-localStorage.theme = 'light';
-var theme = localStorage.theme;
+var button = document.querySelector("#body button");
 
-
-
-var themePromise = new Promise(function (resolve, reject) {
-
-    var theme = localStorage.theme
-
-    if (theme == 'dark') {
-        resolve('dark')
-        console.log('dark')
-    } else {
-        reject('light')
-        console.log('light')
+button.addEventListener("click", function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.github.com/users")
+    xhr.send()
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            var data = JSON.parse(xhr.responseText);
+            console.log(data[0].login);
+        }
     }
 })
 
-console.log(themePromise)
+
+
+
+// https://api.github.com/users
